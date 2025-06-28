@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2>Selamat datang di website portofolio saya!</h2>
+<p>Saya adalah seorang web developer yang fokus pada backend development menggunakan Python.</p>
+
+<h3>Feedback dari pengunjung:</h3>
+<ul>
+    {% for f in feedbacks %}
+        <li><strong>{{ f.name }}</strong>: {{ f.message }} (Rating: {{ f.rating }}/5)</li>
+    {% else %}
+        <li>Belum ada feedback.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
